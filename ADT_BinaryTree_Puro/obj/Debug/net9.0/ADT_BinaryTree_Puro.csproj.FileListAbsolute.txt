@@ -1,0 +1,15 @@
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/bin/Debug/net9.0/ADT_BinaryTree_Puro
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/bin/Debug/net9.0/ADT_BinaryTree_Puro.deps.json
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/bin/Debug/net9.0/ADT_BinaryTree_Puro.runtimeconfig.json
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/bin/Debug/net9.0/ADT_BinaryTree_Puro.dll
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/bin/Debug/net9.0/ADT_BinaryTree_Puro.pdb
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/ADT_BinaryTree_Puro.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/ADT_BinaryTree_Puro.AssemblyInfoInputs.cache
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/ADT_BinaryTree_Puro.AssemblyInfo.cs
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/ADT_BinaryTree_Puro.csproj.CoreCompileInputs.cache
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/ADT_BinaryTree_Puro.dll
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/refint/ADT_BinaryTree_Puro.dll
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/ADT_BinaryTree_Puro.pdb
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/ADT_BinaryTree_Puro.genruntimeconfig.cache
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/ref/ADT_BinaryTree_Puro.dll
+/Users/sor-team/Documents/source/ADT_BinaryTree_Puro/ADT_BinaryTree_Puro/obj/Debug/net9.0/ADT_BinaryTree_Puro.sourcelink.json
