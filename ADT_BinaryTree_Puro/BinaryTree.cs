@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ADT_BinaryTree_Puro
 {
-    class BinaryTree<T>
+    class BinaryTree<T> where T : IComparable<T>
     {
         public class Node<TT> //evitare di nascondere il parametro
         {
@@ -329,7 +329,203 @@ namespace ADT_BinaryTree_Puro
             return RecursiveFindParent(current.RightNode, RealNode, current);
         }
 
+    #region VISIT DFS
+    
+        public void VisitDFS_PreOrder(Node<T> ?node)
+        {
+            if (node == null)
+                return;
 
+            Console.WriteLine(node.Value);
+            VisitDFS_PreOrder(node.LeftNode);
+            VisitDFS_PreOrder(node.RightNode);
+        }
+
+        public void VisitDFS_PreOrder_Stack()
+        {
+            Stack<Node<T>?> stack = new();
+            if (Root == null)
+                return;
+
+            stack.Push(Root);
+            
+            while (stack.Count > 0)
+            {
+                var current = stack.Pop();
+
+                if (current == null) continue;
+
+                Console.WriteLine(current.Value);
+                stack.Push(current.RightNode);
+                stack.Push(current.LeftNode);
+                
+            }
+        }
+
+        public bool SearchDFS_PreOrder(Node<T>? node, T value)
+        {
+            if (node == null) return false;
+            if (node.Value.CompareTo(value) == 0) return true;
+            return SearchDFS_PreOrder(node.LeftNode, value) || SearchDFS_PreOrder(node.RightNode, value);
+        }
+
+        public void VisitDFS_InOrder (Node<T>? node)
+        {
+            if (node == null)
+                return;
+
+            VisitDFS_InOrder(node.LeftNode);
+            Console.WriteLine(node.Value);
+            VisitDFS_InOrder(node.RightNode);
+        }
+
+        public void VisitDFS_InOrder_Stack()
+        {
+            Stack<Node<T>> stack = new ();
+            Node<T>? current = Root;
+
+            while (current != null || stack.Count > 0)
+            {
+                // Vai il più a sinistra possibile
+                while (current != null)
+                {
+                    stack.Push(current);
+                    current = current.LeftNode;
+                }
+
+                // Prendi il nodo in cima
+                current = stack.Pop();
+                Console.Write(current.Value + " ");
+
+                // Vai a destra
+                current = current.RightNode;
+
+                // Se ci sono nodi figli del nodo a destra del nodo corrente (che è a sinistra), gli metterà nello stack andando a stampare il + profondo
+                // Altrimenti prende dallo stack l'elemento, che sarà il padre del nodo corrente
+            }
+        }
+
+        public bool SearchDFS_InOrder(Node<T>? node, T value)
+        {
+            if (node == null) return false;
+            if (SearchDFS_PreOrder(node.LeftNode, value)) return true;
+            if (node.Value.CompareTo(value) == 0) return true;
+            return SearchDFS_PreOrder(node.RightNode, value);
+        }
+
+        public void VisitDFS_PostOrder (Node<T>? node)
+        {
+            if (node == null)
+                return;
+
+            VisitDFS_PostOrder(node.LeftNode);
+            VisitDFS_PostOrder(node.RightNode);
+            Console.WriteLine(node.Value);
+        }
+
+        public void VisitDFS_PostOrder_Stack(Node<T>? node)
+        {
+            Stack<Node<T>> stack = new ();
+            Node<T>? current = Root;
+            Node<T>? lastVisited = null;
+
+            while (current != null || stack.Count > 0)
+            {
+                if (current != null)
+                {
+                    stack.Push(current);
+                    current = current.LeftNode;
+                }
+                else
+                {
+                    Node<T> peek = stack.Peek();
+
+                    // Se esiste il figlio destro e non è stato ancora visitato
+                    if (peek.RightNode != null && lastVisited != peek.RightNode)
+                    {
+                        current = peek.RightNode;
+                    }
+                    else
+                    {
+                        Console.Write(peek.Value + " ");
+                        lastVisited = stack.Pop();
+                    }
+                }
+            }
+        }
+
+        public bool SearchDFS_PostOrder(Node<T>? node, T value)
+        {
+            if (node == null) return false;
+            if (SearchDFS_PreOrder(node.LeftNode, value) || SearchDFS_PreOrder(node.RightNode, value)) return true;
+            return (node.Value.CompareTo(value) == 0);
+        }
+
+
+    #endregion
+
+    #region VISIT BFS
+
+        public void VisitBFS() //impossibile con ricorsione
+        {
+            Queue<Node<T>?> nodes = new();
+            nodes.Enqueue(Root);
+
+            while (nodes.Any())
+            {
+                var current = nodes.Dequeue();
+
+                if (current == null) continue;
+
+                Console.WriteLine(current.Value);
+                nodes.Enqueue(current.LeftNode);
+                nodes.Enqueue(current.RightNode);
+            }
+        }
+
+        public bool SearchBFS(T value)
+        {
+            Queue<Node<T>?> nodes = new();
+            nodes.Enqueue(Root);
+
+            while (nodes.Any())
+            {
+                var current = nodes.Dequeue();
+
+                if (current == null) continue;
+                if (current.Value.CompareTo(value) == 0) return true;
+                nodes.Enqueue(current.LeftNode);
+                nodes.Enqueue(current.RightNode);
+            }
+
+            return false;
+        }
+
+    #endregion
+
+    /* BFS della prof
+
+    void VisitBFS(Node<T> root)
+    {
+        if (root == null)
+            return;
+
+        Queue<Node<T>> queue = new Queue<Node<T>>();
+        queue.Enqueue(root);
+
+        while (queuq.Count > 0)
+        {
+            Node<T> node = queue.Dequeue();
+            Console.Write(node.Value + "   ");
+
+            if (node.LeftNode != null)
+                queue.Enqueue(node.LeftNode);
+
+            if (node.RIghtNode != null)
+                queue.Enqueue(node.RightNode);
+        }
+
+    */
 
   }
 }

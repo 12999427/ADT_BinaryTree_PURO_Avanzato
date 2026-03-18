@@ -8,13 +8,14 @@ class Program
     {
         BinaryTree<int> binaryTree = new();
         
-        for (int i = 0; i<17; i++)
+        for (int i = 0; i<7; i++)
         {
             binaryTree.InsertLeaf(i);
         }
 
         binaryTree.Print();
         
+        /*
         for (int i = 0; i<1; i++)
         {
             Console.WriteLine("\n________________\nValue " + binaryTree.Pop() + "\n");
@@ -46,5 +47,9 @@ class Program
         binaryTree.InsertSubtree(l_c_p, bin_t2);
         Console.WriteLine("\n____________________");
         binaryTree.Print();
+        */
+
+        Console.WriteLine("visit:");
+        binaryTree.VisitBFS();
     }
 }

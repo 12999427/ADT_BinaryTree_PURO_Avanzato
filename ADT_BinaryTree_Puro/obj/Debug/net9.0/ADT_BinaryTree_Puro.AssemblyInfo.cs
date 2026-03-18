@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ADT_BinaryTree_Puro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+276ae78973ce2fd6f6114cd09f23138897a28dd1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe2d0280c2a1e44b2055700f13a9d08daeaef744")]
 [assembly: System.Reflection.AssemblyProductAttribute("ADT_BinaryTree_Puro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ADT_BinaryTree_Puro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
